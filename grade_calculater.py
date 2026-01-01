@@ -1,7 +1,7 @@
 from tkinter import *
 
 def calculate():
-    try:
+  
         m1 = float(sub1_entry.get())
         m2 = float(sub2_entry.get())
         m3 = float(sub3_entry.get())
@@ -25,10 +25,7 @@ def calculate():
         avg_label.config(text=f"Average Marks : {avg:.2f}")
         grade_label.config(text=f"Grade : {grade}")
 
-    except ValueError:
-        total_label.config(text="Please enter valid marks")
-        avg_label.config(text="")
-        grade_label.config(text="")
+    
 
 root = Tk()
 root.title("Student Grade Calculator")
@@ -37,31 +34,32 @@ root.geometry("320x300")
 title = Label(root, text="Grade Calculator", font=("Arial", 16, "bold") ,bg="lightblue")
 title.pack(pady=10)
 
-# Input fields
-Label(root, text="Subject 1 Marks:").pack()
+
+Label(root, text="Subject 1 Marks:",bg="lightgreen").pack()
 sub1_entry = Entry(root)
 sub1_entry.pack()
 
-Label(root, text="Subject 2 Marks:").pack()
+Label(root, text="Subject 2 Marks:",bg="lightgreen").pack()
 sub2_entry = Entry(root)
 sub2_entry.pack()
 
-Label(root, text="Subject 3 Marks:").pack()
+Label(root, text="Subject 3 Marks:",bg="lightgreen").pack()
 sub3_entry = Entry(root)
 sub3_entry.pack()
 
-# Calculate button
-btn = Button(root, text="Calculate", command=calculate)
+
+btn = Button(root, text="Calculate", command=calculate,bg="orange")
 btn.pack(pady=10)
 
-# Result labels
-total_label = Label(root, text="", font=("Arial", 12))
+
+total_label = Label(root, text="", font=("Arial", 12),bg="lightpink")
 total_label.pack()
 
-avg_label = Label(root, text="", font=("Arial", 12))
+avg_label = Label(root, text="", font=("Arial", 12),bg="lightpink")
 avg_label.pack()
 
-grade_label = Label(root, text="", font=("Arial", 12))
+grade_label = Label(root, text="", font=("Arial", 12),bg="lightpink")
 grade_label.pack()
 
 root.mainloop()
+
